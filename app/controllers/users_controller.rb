@@ -16,7 +16,10 @@ class UsersController < ApplicationController
     end
 
     def update
-        user = User.find_by(handle: params[:user_handle])
+        user = User.find(params[:id])
+        wordArray = params[:user][:words]
+        user.update(words: wordArray)
+        render json: user.to_json
     end
 
     # def destroy
