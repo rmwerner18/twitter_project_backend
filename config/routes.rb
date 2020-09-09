@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :sessions
   resources :users
-  get 'users/?handle=:user_handle', to: 'users#show'
+  get 'users/:id', to: 'users#show'
   post 'users/', to: 'users#create'
   put 'users/?handle=:user_handle', to: 'users#update'
   # destroy 'users/?handle=:user_handle', to: 'users#destroy'
